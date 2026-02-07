@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ??</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* FLOATING HEARTS */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:float 8s linear infinite;
+}
+@keyframes float{
+  to{transform:translateY(-100vh);opacity:0}
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero h1{
+  font-family:'Great Vibes',cursive;
+  font-size:64px;
+}
+.hero p{margin-top:12px}
+
+/* BUTTONS */
+.btn-group{
+  margin-top:35px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+}
+button{
+  padding:14px 32px;
+  border-radius:30px;
+  border:none;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+}
+
+/* POPUPS */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.popup-card{
+  background:white;
+  color:#ff4d6d;
+  width:360px;
+  border-radius:25px;
+  padding:25px;
+  text-align:center;
+  animation:pop .6s ease;
+}
+@keyframes pop{
+  from{transform:scale(0)}
+  to{transform:scale(1)}
+}
+
+/* CANDLES */
+.candles{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:20px 0;
+}
+.candle{
+  width:12px;
+  height:40px;
+  background:#ffb3c1;
+  border-radius:6px;
+  position:relative;
+  cursor:pointer;
+}
+.flame{
+  width:10px;
+  height:14px;
+  background:orange;
+  position:absolute;
+  top:-15px;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:50%;
+  animation:flicker .6s infinite alternate;
+}
+@keyframes flicker{
+  to{opacity:.6;transform:translateX(-50%) scale(.8)}
+}
+.flame.off{display:none}
+
+/* SURPRISE */
+.surprise{
+  display:none;
+  margin-top:15px;
+  font-size:18px;
+  color:#ff4d6d;
+  animation:fadeIn 1s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1}
+}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  top:-20px;
+  font-size:20px;
+  animation:fall 4s linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+
+/* PHOTO */
+.photo{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  margin:15px 0;
+}
+
+/* MESSAGE */
+.popup-card p{
+  font-size:14.5px;
+  line-height:1.7;
+  margin-top:12px;
+}
+
+/* CLOSE */
+.close{
+  margin-top:18px;
+  padding:10px 24px;
+  border:none;
+  border-radius:20px;
+  background:#ff4d6d;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div>
+    <h1>Happy Birthday, My Love ??</h1>
+    <p>You are my favorite person ??</p>
+    <div class="btn-group">
+      <button onclick="showCake()">Blow the Cake ??</button>
+      <button onclick="showMessage()">Open Message ??</button>
+    </div>
+  </div>
+</div>
+
+<!-- CAKE POPUP -->
+<div class="popup" id="cakePopup">
+  <div class="popup-card">
+    <h2>Make a Wish ??</h2>
+
+    <div class="candles" id="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+
+    <div class="surprise" id="surprise">
+      ?? Surprise! ??<br>
+      May all your dreams come true,<br>
+      and may I always be by your side ??
+    </div>
+
+    <button class="close" onclick="closeCake()">Close</button>
+  </div>
+</div>
+
+<!-- MESSAGE + PHOTO POPUP -->
+<div class="popup" id="messagePopup">
+  <div class="popup-card">
+    <h2>For You ??</h2>
+    <img src="1000011254.jpg" class="photo">
+    <p>
+      You light up my life just like these candles, and every day with you feels warmer and brighter because of your presence. ??<br><br>
+      Thank you for being you — for your kindness, your beautiful soul, and the way you effortlessly make people feel loved. Your smile is my comfort, your laughter is my favorite sound, and your strength inspires me more than you know.<br><br>
+      On your special day and on every ordinary day after this, I want you to remember that you are deeply cherished. I’m so grateful for every memory we’ve made and every moment that’s still waiting for us.<br><br>
+      No matter where life takes us, I promise to stand beside you, support your dreams, and love you with all my heart. Always and in all ways, it will be you. ???<br><br>
+      Happy Birthday, my love. ????
+    </p>
+    <button class="close" onclick="closeMessage()">Close</button>
+  </div>
+</div>
+
+<script>
+/* HEARTS */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="??";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+},350);
+
+/* POPUPS */
+const cakePopup=document.getElementById("cakePopup");
+const messagePopup=document.getElementById("messagePopup");
+const surprise=document.getElementById("surprise");
+
+function showCake(){cakePopup.style.display="flex"}
+function closeCake(){cakePopup.style.display="none"}
+function showMessage(){messagePopup.style.display="flex"}
+function closeMessage(){messagePopup.style.display="none"}
+
+/* CANDLES + SURPRISE */
+let surpriseShown=false;
+
+document.getElementById("candles").addEventListener("click",e=>{
+  if(e.target.classList.contains("flame")){
+    e.target.classList.add("off");
+
+    const remaining=document.querySelectorAll(".flame:not(.off)").length;
+
+    if(remaining===0 && !surpriseShown){
+      surpriseShown=true;
+      surprise.style.display="block";
+      launchConfetti();
+    }
+  }
+});
+
+/* CONFETTI */
+function launchConfetti(){
+  for(let i=0;i<40;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.innerHTML="??";
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=3+Math.random()*2+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5000);
+  }
+}
+</script>
+
+</body>
+</html>
