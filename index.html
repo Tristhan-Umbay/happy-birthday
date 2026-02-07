@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday My Love ??</title>
+<title>Happy Birthday My Love 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -35,28 +35,35 @@ body{
   align-items:center;
   justify-content:center;
   text-align:center;
+  padding:20px;
 }
 .hero h1{
   font-family:'Great Vibes',cursive;
-  font-size:64px;
+  font-size:48px;
 }
-.hero p{margin-top:12px}
+.hero p{
+  margin-top:12px;
+  font-size:16px;
+}
 
 /* BUTTONS */
 .btn-group{
-  margin-top:35px;
+  margin-top:25px;
   display:flex;
-  gap:15px;
+  gap:10px;
   justify-content:center;
+  flex-wrap:wrap;
 }
 button{
-  padding:14px 32px;
+  padding:12px 25px;
   border-radius:30px;
   border:none;
   background:#ff4d6d;
   color:white;
   cursor:pointer;
+  font-size:14px;
 }
+button:hover{transform:scale(1.05);transition:0.2s}
 
 /* POPUPS */
 .popup{
@@ -67,13 +74,15 @@ button{
   align-items:center;
   justify-content:center;
   z-index:999;
+  padding:10px;
 }
 .popup-card{
   background:white;
   color:#ff4d6d;
-  width:360px;
-  border-radius:25px;
-  padding:25px;
+  width:100%;
+  max-width:360px;
+  border-radius:20px;
+  padding:20px;
   text-align:center;
   animation:pop .6s ease;
 }
@@ -86,8 +95,8 @@ button{
 .candles{
   display:flex;
   justify-content:center;
-  gap:12px;
-  margin:20px 0;
+  gap:10px;
+  margin:15px 0;
 }
 .candle{
   width:12px;
@@ -117,9 +126,10 @@ button{
 .surprise{
   display:none;
   margin-top:15px;
-  font-size:18px;
+  font-size:16px;
   color:#ff4d6d;
   animation:fadeIn 1s ease;
+  line-height:1.5;
 }
 @keyframes fadeIn{
   from{opacity:0;transform:translateY(10px)}
@@ -140,28 +150,42 @@ button{
 /* PHOTO */
 .photo{
   width:100%;
-  height:220px;
+  height:auto;
+  max-height:220px;
   object-fit:cover;
-  border-radius:18px;
+  border-radius:15px;
   margin:15px 0;
 }
 
 /* MESSAGE */
 .popup-card p{
-  font-size:14.5px;
-  line-height:1.7;
+  font-size:14px;
+  line-height:1.6;
   margin-top:12px;
+  word-wrap:break-word;
 }
 
 /* CLOSE */
 .close{
-  margin-top:18px;
-  padding:10px 24px;
+  margin-top:15px;
+  padding:10px 20px;
   border:none;
   border-radius:20px;
   background:#ff4d6d;
   color:white;
   cursor:pointer;
+  font-size:14px;
+}
+
+/* MEDIA QUERIES FOR MOBILE */
+@media screen and (max-width:400px){
+  .hero h1{font-size:36px}
+  .hero p{font-size:14px}
+  button{padding:10px 18px; font-size:13px}
+  .popup-card{padding:15px}
+  .photo{max-height:180px}
+  .popup-card p{font-size:13px; line-height:1.5}
+  .surprise{font-size:15px}
 }
 </style>
 </head>
@@ -170,11 +194,11 @@ button{
 
 <div class="hero">
   <div>
-    <h1>Happy Birthday, My Love ??</h1>
-    <p>You are my favorite person ??</p>
+    <h1>Happy Birthday, My Love 💖</h1>
+    <p>You are my favorite person 💕</p>
     <div class="btn-group">
-      <button onclick="showCake()">Blow the Cake ??</button>
-      <button onclick="showMessage()">Open Message ??</button>
+      <button onclick="showCake()">Blow the Cake 🎂</button>
+      <button onclick="showMessage()">Open Message 💌</button>
     </div>
   </div>
 </div>
@@ -182,7 +206,7 @@ button{
 <!-- CAKE POPUP -->
 <div class="popup" id="cakePopup">
   <div class="popup-card">
-    <h2>Make a Wish ??</h2>
+    <h2>Make a Wish 🎂</h2>
 
     <div class="candles" id="candles">
       <div class="candle"><div class="flame"></div></div>
@@ -193,9 +217,9 @@ button{
     </div>
 
     <div class="surprise" id="surprise">
-      ?? Surprise! ??<br>
+      🎉 Surprise! 🎉<br>
       May all your dreams come true,<br>
-      and may I always be by your side ??
+      and may I always be by your side 💖
     </div>
 
     <button class="close" onclick="closeCake()">Close</button>
@@ -205,14 +229,14 @@ button{
 <!-- MESSAGE + PHOTO POPUP -->
 <div class="popup" id="messagePopup">
   <div class="popup-card">
-    <h2>For You ??</h2>
-    <img src="1000011254.jpg" class="photo">
+    <h2>For You 💖</h2>
+    <img src="1000011254.jpg" class="photo" alt="My Love">
     <p>
-      You light up my life just like these candles, and every day with you feels warmer and brighter because of your presence. ??<br><br>
-      Thank you for being you � for your kindness, your beautiful soul, and the way you effortlessly make people feel loved. Your smile is my comfort, your laughter is my favorite sound, and your strength inspires me more than you know.<br><br>
-      On your special day and on every ordinary day after this, I want you to remember that you are deeply cherished. I�m so grateful for every memory we�ve made and every moment that�s still waiting for us.<br><br>
-      No matter where life takes us, I promise to stand beside you, support your dreams, and love you with all my heart. Always and in all ways, it will be you. ???<br><br>
-      Happy Birthday, my love. ????
+      You light up my life just like these candles, and every day with you feels warmer and brighter because of your presence. 💫<br><br>
+      Thank you for being you — for your kindness, your beautiful soul, and the way you effortlessly make people feel loved. Your smile is my comfort, your laughter is my favorite sound, and your strength inspires me more than you know.<br><br>
+      On your special day and on every ordinary day after this, I want you to remember that you are deeply cherished. I’m so grateful for every memory we’ve made and every moment that’s still waiting for us.<br><br>
+      No matter where life takes us, I promise to stand beside you, support your dreams, and love you with all my heart. Always and in all ways, it will be you. 💖✨<br><br>
+      Happy Birthday, my love. 🎂💐
     </p>
     <button class="close" onclick="closeMessage()">Close</button>
   </div>
@@ -223,7 +247,7 @@ button{
 setInterval(()=>{
   const h=document.createElement("div");
   h.className="heart";
-  h.innerHTML="??";
+  h.innerHTML="💗";
   h.style.left=Math.random()*100+"vw";
   document.body.appendChild(h);
   setTimeout(()=>h.remove(),8000);
@@ -261,7 +285,7 @@ function launchConfetti(){
   for(let i=0;i<40;i++){
     const c=document.createElement("div");
     c.className="confetti";
-    c.innerHTML="??";
+    c.innerHTML="🎉";
     c.style.left=Math.random()*100+"vw";
     c.style.animationDuration=3+Math.random()*2+"s";
     document.body.appendChild(c);
